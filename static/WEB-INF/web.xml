@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    version="2.5">
+    
+	<display-name>ECommerce</display-name>
+
+	<!-- <welcome-file-list>
+		<welcome-file>/homePage.jsp</welcome-file>
+	</welcome-file-list> -->
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/error.jsp</location>
+	</error-page>
+	
+	<servlet>
+		<servlet-name>ECommerceServlet</servlet-name>
+		<servlet-class>com.via.controller.ECommerceServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name> default </servlet-name>
+		<url-pattern> /static/* </url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ECommerceServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+		
+	 <jsp-config>
+    <taglib>
+        <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+        <taglib-location>/src/jsp/tld/c.tld</taglib-location>
+    </taglib>
+	</jsp-config>  
+
+</web-app>
